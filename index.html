@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>movie-web</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="intro">
+      <h1>
+        WELCOME TO MOLLYWOOD
+        <div class="roller">
+          <span id="rolltext"
+            >Classic <br />
+            Modern <br />
+            Top <br />
+            <span id="spare-time">Lets watch and Feel it</span>
+            <br />
+          </span>
+        </div>
+      </h1>
+    </div>
+    <div class="main-container hidden" id="main">
+      <!-- navbar -->
+      <nav>
+        <h2>Movie-Web</h2>
+        <ul>
+          <li>
+            <a href="./recomment/index.html" class="box-link">Fav Movies </a>
+          </li>
+          <li>
+            <a href="./oldmovies/oldmovies.html" class="box-link">Old movies</a>
+          </li>
+          <li>
+            <a href="./new-movie/newmovie.html" class="box-link">New movies</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- banner area -->
+      <section class="banner">
+        <div class="container1">
+          <button class="prev" onclick="userclick(-1)">
+            <img src="./IMAGES/icons/aroow.svg" alt="prev" />
+          </button>
+          <img
+            src="./IMAGES/banner/bannermovie1.webp"
+            alt="banner1"
+            class="bannerimg"
+          />
+          <img
+            src="./IMAGES/banner/bannermovie2.jpg"
+            alt="banner1"
+            class="bannerimg"
+          />
+          <img
+            src="./IMAGES/banner/bannermovie3.jpg"
+            alt="banner1"
+            class="bannerimg"
+          />
+        </div>
+        <button class="next" onclick="userclick(1)">
+          <img src="./IMAGES/icons/arow.svg" alt="next" />
+        </button>
+        <div class="banner-dots">
+          <span class="dot" onclick="doted(0)"></span>
+          <span class="dot" onclick="doted(1)"></span>
+          <span class="dot" onclick="doted(2)"></span>
+        </div>
+      </section>
+      <!-- 3 options -->
+      <div class="container2">
+        <a href="./recomment/index.html" class="box-link">
+          <div class="box" id="box1">
+            <h2 class="title">Fav Movie</h2>
+          </div>
+        </a>
+        <a href="./oldmovies/oldmovies.html" class="box-link">
+          <div class="box" id="box2">
+            <h2 class="title">Old Movie</h2>
+          </div>
+        </a>
+        <a href="./new-movie/newmovie.html" class="box-link">
+          <div class="box" id="box3">
+            <h2 class="title">New Movie</h2>
+          </div>
+        </a>
+      </div>
+      <!-- ikka grid -->
+      <div class="wrapp">
+        <div class="ikka-grid">
+          <div class="pic1"><img src="./IMAGES/ikka/IKKA1.jpg" alt="" /></div>
+          <div class="pic2"><img src="./IMAGES/ikka/ikka2.jpg" alt="" /></div>
+          <div class="pic3"><img src="./IMAGES/ikka/ikka3.jpg" alt="" /></div>
+          <div class="pic4"><img src="./IMAGES/ikka/ikka4.jpg" alt="" /></div>
+          <div class="pic5"><img src="./IMAGES/ikka/ikka5.jpg" alt="" /></div>
+        </div>
+        <div class="ikkatextbox">
+          <div class="cornerbox">
+            <div class="box">
+              <h2>Mammootty</h2>
+
+              <ul class="unorder">
+                <li>Born in 1951 (September 7)</li>
+                <li>Won 3 National Film Awards for Best Actor.</li>
+                <li>Has 7 Kerala State Film Awards for Best Actor</li>
+                <li>Awarded the Padma Shri by Government of India in 1998</li>
+                <li>
+                  Over a five-decade-long career, acted in more than 420 films.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ettan grid -->
+      <div class="wrapp1">
+        <div class="ettantextbox">
+          <div class="cornerbox">
+            <div class="box">
+              <h2>Mohanlal</h2>
+              <ul class="unorder">
+                <li class="list">Born: 21 May 1960</li>
+                <li>Win 5 National Awards.</li>
+                <li>Has 6 Kerala State Film Awards for Best Actor</li>
+                <li>Awarded the Padma Shri in 1998</li>
+                <li>Padma Bhushan (2019) from Government of India</li>
+                <li>Dadasaheb Phalke Award (2023)</li>
+                <li>Awarded honorary rank of Lieutenant Colonel(2009)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="ettan-grid">
+          <div class="pic1"><img src="./IMAGES/ettan/ettan1.jpg" alt="" /></div>
+          <div class="pic2"><img src="./IMAGES/ettan/ettan2.jpg" alt="" /></div>
+          <div class="pic3"><img src="./IMAGES/ettan/ettan3.jpg" alt="" /></div>
+          <div class="pic4"><img src="./IMAGES/ettan/ettan4.jpg" alt="" /></div>
+          <div class="pic5"><img src="./IMAGES/ettan/ettan5.jpg" alt="" /></div>
+        </div>
+      </div>
+
+      <section class="love">
+        <h2>
+          Where every heartbeat becomes a story Mollywood’s finest tales of love
+        </h2>
+        <div class="container3">
+          <div class="corouselrotate">
+            <div class="picrotate"><span></span></div>
+            <div class="picrotate"><span></span></div>
+            <div class="picrotate"><span></span></div>
+            <div class="picrotate"><span></span></div>
+            <div class="picrotate"><span></span></div>
+            <div class="picrotate"><span></span></div>
+            <div class="picrotate"><span></span></div>
+            <div class="picrotate"><span></span></div>
+            <div class="picrotate"><span></span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- decorative -->
+      <div class="container4">
+        <div class="heading"><h3>lets listen some music</h3></div>
+        <div class="container4in">
+          <div class="left-container">
+            <div class="tracklist" id="tracklist">
+              <div class="track-container">
+                <div class="trackimg">
+                  <img src="./IMAGES/icons/menusong.png" alt="icone" />
+                  <img src="" alt="image" />
+                </div>
+                <div class="track-detail">
+                  <p>trackname</p>
+                  <p>trackauthor</p>
+                </div>
+                <div class="track-time">
+                  <p>time</p>
+                  <p>year</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-container">
+            <div class="loadedtrack">
+              <div class="loadedimg">
+                <img src="" alt="loadedimg" id="loadedimg" />
+              </div>
+              <div class="track-details">
+                <p id="name">trackname</p>
+                <p id="author">author</p>
+              </div>
+              <div class="control">
+                <div class="progress">
+                  <div class="time" id="current-time">00:00</div>
+                  <input
+                    type="range"
+                    id="progress"
+                    min="0"
+                    max="100"
+                    value="0"
+                    step="1"
+                  />
+
+                  <div class="time" id="time-left">2:25</div>
+                </div>
+
+                <div class="btn-group">
+                  <button class="next-prev" id="prev">
+                    <img src="./IMAGES/icons/prev.png" alt="prev" />
+                  </button>
+                  <button id="play-pause">
+                    <img
+                      src="./IMAGES/icons/play (2).png"
+                      alt="playpause"
+                      id="playpause"
+                    />
+                  </button>
+                  <button class="next-prev" id="next">
+                    <img src="./IMAGES/icons/next.png" alt="next" />
+                  </button>
+                </div>
+                <div class="volume">
+                  <div class="volumecontrol">
+                    <img
+                      src="./IMAGES/icons/mute.png"
+                      alt="low vplume"
+                      id="low-volume"
+                    />
+                    <input
+                      type="range"
+                      id="volume"
+                      min="0"
+                      max="1"
+                      value="1"
+                      step="0.1"
+                      class="volume-range"
+                    />
+                    <img
+                      src="./IMAGES/icons/hi.png"
+                      alt="high volume"
+                      id="high-volume"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

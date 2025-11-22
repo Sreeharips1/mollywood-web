@@ -1,0 +1,437 @@
+@import url("https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Caveat:wght@400..700&family=Cinzel:wght@400..900&family=Dancing+Script:wght@400..700&family=Edu+VIC+WA+NT+Hand:wght@400..700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+  --items: 0;
+  --thriller-width: min(85vw, 1200px);
+  --cardwidth: 300px;
+  --cardheight: 590px;
+  --gap: 20px;
+  --speed: 35s;
+  --background: black;
+  --dramamovies: 0;
+  --actionmovies: 0;
+  --comedymovies: 0;
+}
+body {
+  background-color: black;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  margin: 20px;
+  border: 2px solid goldenrod;
+}
+
+.drama,
+.thrillers {
+  margin-top: 100px;
+}
+.drama h2,
+.thrillers h2 {
+  color: goldenrod;
+  margin: 10px auto 50px auto;
+  padding: auto;
+  text-align: center;
+
+  font-family: "Cinzel";
+}
+
+#thriller,
+#drama {
+  width: var(--thriller-width);
+  height: var(--cardheight);
+  margin: auto;
+  display: block;
+  overflow: hidden;
+}
+
+/* cards */
+
+#thriller .card {
+  width: var(--cardwidth);
+  height: var(--cardheight);
+  position: absolute;
+  overflow: hidden;
+  animation: slide var(--speed) linear infinite;
+  display: flex;
+  flex-direction: column; /* stack items vertically */
+  align-items: center; /* center content */
+
+  animation-delay: calc((var(--speed) / var(--items)) * var(--i) * -1);
+
+  border-radius: 12px;
+  background: rgba(252, 252, 252, 0.938);
+  color: #222;
+}
+
+#drama img,
+#thriller img {
+  width: 100%;
+  height: 70%;
+  object-fit: contain;
+  background-color: black;
+  border-radius: 15px;
+}
+
+#drama h2,
+#thriller h2 {
+  margin: 10px 15px 6px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: rgba(184, 135, 11, 0.226);
+  padding: 10px;
+  border-radius: 16px;
+}
+
+#drama p,
+#thriller p {
+  margin: 0 15px;
+  font-size: 14px;
+  opacity: 0.75;
+  padding: 10px;
+  box-sizing: border-box;
+}
+#drama p:hover,
+#thriller p:hover {
+  font-weight: 800;
+}
+
+#drama span,
+#thriller span {
+  font-weight: bolder;
+  color: darkgoldenrod;
+}
+
+.text {
+  text-align: center;
+  height: auto;
+  margin: auto;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(calc(var(--items) * (var(--cardwidth) + var(--gap))));
+  }
+  to {
+    transform: translateX(
+      calc(var(--items) * (var(--cardwidth) / 2 + var(--gap)) * -1)
+    );
+  }
+}
+
+/* Pause animation on hover */
+#drama:hover .dramacard,
+#thriller:hover .card {
+  animation-play-state: paused;
+}
+
+/* drama start */
+
+#drama .dramacard {
+  width: var(--cardwidth);
+  height: var(--cardheight);
+  position: absolute;
+  overflow: hidden;
+  animation: dramaslides var(--speed) linear infinite;
+  display: flex;
+  flex-direction: column; /* stack items vertically */
+  align-items: center; /* center content */
+
+  animation-delay: calc(
+    (var(--speed) / var(--dramamovies)) * var(--drama) * -1
+  );
+
+  border-radius: 12px;
+  background: rgba(252, 252, 252, 0.938);
+  color: #222;
+}
+
+@keyframes dramaslides {
+  from {
+    transform: translateX(
+      calc(var(--items) * (var(--cardwidth) / 2 + var(--gap)) * -1)
+    );
+  }
+  to {
+    transform: translateX(calc(var(--items) * (var(--cardwidth) + var(--gap))));
+  }
+}
+
+.comedy,
+.action {
+  margin-top: 100px;
+}
+.comedy h2,
+.action h2 {
+  color: goldenrod;
+  margin: 10px auto 50px auto;
+  padding: auto;
+  text-align: center;
+
+  font-family: "Cinzel";
+}
+
+#comedy,
+#action {
+  width: var(--thriller-width);
+  height: var(--cardheight);
+  margin: auto;
+  display: block;
+  overflow: hidden;
+}
+
+/* cards */
+
+#action .actioncard {
+  width: var(--cardwidth);
+  height: var(--cardheight);
+  position: absolute;
+  overflow: hidden;
+  animation: action var(--speed) linear infinite;
+  display: flex;
+  flex-direction: column; /* stack items vertically */
+  align-items: center; /* center content */
+
+  animation-delay: calc(
+    (var(--speed) / var(--actionmovies)) * var(--action) * -1
+  );
+
+  border-radius: 12px;
+  background: rgba(252, 252, 252, 0.938);
+  color: #222;
+}
+#comedy .comedycard {
+  width: var(--cardwidth);
+  height: var(--cardheight);
+  position: absolute;
+  overflow: hidden;
+  animation: comedy var(--speed) linear infinite;
+  display: flex;
+  flex-direction: column; /* stack items vertically */
+  align-items: center; /* center content */
+
+  animation-delay: calc(
+    (var(--speed) / var(--comedymovies)) * var(--comedy) * -1
+  );
+
+  border-radius: 12px;
+  background: rgba(252, 252, 252, 0.938);
+  color: #222;
+}
+
+#comedy img,
+#action img {
+  width: 100%;
+  height: 70%;
+  object-fit: contain;
+  background-color: black;
+  border-radius: 15px;
+}
+
+#comedy h2,
+#action h2 {
+  margin: 10px 15px 6px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: rgba(184, 135, 11, 0.226);
+  padding: 10px;
+  border-radius: 16px;
+}
+
+#comedy p,
+#action p {
+  margin: 0 15px;
+  font-size: 14px;
+  opacity: 0.75;
+  padding: 10px;
+  box-sizing: border-box;
+}
+#comedy p:hover,
+#action p:hover {
+  font-weight: 800;
+}
+
+#comedy span,
+#action span {
+  font-weight: bolder;
+  color: darkgoldenrod;
+}
+
+.text {
+  text-align: center;
+  height: auto;
+  margin: auto;
+}
+
+@keyframes comedy {
+  from {
+    transform: translateX(
+      calc(var(--comedymovies) * (var(--cardwidth) + var(--gap)))
+    );
+  }
+  to {
+    transform: translateX(
+      calc(var(--comedymovies) * (var(--cardwidth) / 2 + var(--gap)) * -1)
+    );
+  }
+}
+
+@keyframes action {
+  from {
+    transform: translateX(
+      calc(var(--actionmovies) * (var(--cardwidth) / 2 + var(--gap)) * -1)
+    );
+  }
+  to {
+    transform: translateX(
+      calc(var(--actionmovies) * (var(--cardwidth) + var(--gap)))
+    );
+  }
+}
+
+#action:hover .actioncard,
+#comedy:hover .comedycard {
+  animation-play-state: paused;
+}
+
+.box {
+  /* background-color: goldenrod; */
+  padding: 20px;
+  overflow: hidden;
+  background-color: #fff9cc00;
+  border-radius: 30px;
+  position: relative;
+}
+
+.netflex {
+  position: absolute;
+  top: 50%; /* NEW */
+  left: 50%; /* NEW */
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* OUTER ROTATING CIRCLE */
+.o-circle {
+  height: 4rem;
+  width: 4rem;
+
+  border-radius: 50%;
+
+  border: 4px solid rgb(224, 224, 224); /* full circle */
+  border-top-color: transparent; /* one part invisible */
+  border-right-color: transparent;
+  background-color: rgb(128, 31, 31);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  animation: slideAndSpin 3s ease-out forwards,
+    moveToCenter 2s ease-out 3s forwards;
+}
+
+/* INNER CIRCLE */
+.inner {
+  height: 3rem;
+  width: 1.4rem;
+  background-color: #ebe6e6;
+  border-radius: 50%;
+}
+
+.text1 {
+  font-size: 6rem;
+  color: #ffd84d;
+  font-family: "Inter", sans-serif;
+
+  animation: fadeOut 1s ease-out 3s forwards, fadeIn 1s ease-out 5s forwards;
+
+  font-weight: 900;
+  text-shadow: -0.0075em 0.0075em 0 #fff3a1, 0.005em 0.005em 0 #ffe680,
+    0.01em 0.01em 0 #ffd966, 0.015em 0.015em 0 #ffcc4d, 0.02em 0.02em 0 #ffbf33,
+    0.025em 0.025em 0 #ffb31a, 0.03em 0.03em 0 #ffa600,
+    0.035em 0.035em 0 #ff9900;
+}
+
+.textmove {
+  transform: translateX(-51px);
+}
+
+.textmove1 {
+  transform: translateX(8px);
+}
+
+@keyframes slideAndSpin {
+  0% {
+    transform: translateX(-120vw) rotate(0deg);
+  }
+
+  100% {
+    transform: translateX(0px) rotate(1080deg); /* 3 spins */
+  }
+}
+
+/* THEN MOVE CIRCLE TO NEW "O" POSITION */
+@keyframes moveToCenter {
+  0% {
+    transform: translateX(0px) rotate(1080deg);
+  }
+
+  100% {
+    transform: translateX(99px) rotate(1080deg); /* adjust this to match Nostalgic O spot */
+  }
+}
+
+/* TEXT TRANSITION */
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.netflex1 {
+  position: absolute;
+  top: 50%; /* NEW */
+  left: 50%; /* NEW */
+  transform: translate(-50%, -50%);
+
+  display: none;
+  align-items: center;
+  gap: 15px;
+}
+
+.t1 {
+  font-size: 4rem;
+  color: #ffd84d;
+  font-family: "Cinzel";
+  display: inline-block;
+  transition: 0.3s ease;
+
+  animation: fadeOut 1s ease-out 3s forwards, fadeIn 1s ease-out 5s forwards;
+
+  font-weight: 900;
+  text-shadow: -0.0075em 0.0075em 0 #fff3a1, 0.005em 0.005em 0 #ffe680,
+    0.01em 0.01em 0 #ffd966, 0.015em 0.015em 0 #ffcc4d, 0.02em 0.02em 0 #ffbf33,
+    0.025em 0.025em 0 #ffb31a, 0.03em 0.03em 0 #ffa600,
+    0.035em 0.035em 0 #ff9900;
+}
+
+.t1:hover {
+  transform: translateY(-40%);
+}

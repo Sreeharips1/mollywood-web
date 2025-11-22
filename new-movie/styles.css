@@ -1,0 +1,433 @@
+@import url("https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Caveat:wght@400..700&family=Cinzel:wght@400..900&family=Dancing+Script:wght@400..700&family=Edu+VIC+WA+NT+Hand:wght@400..700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+  --items: 0;
+  --thriller-width: min(85vw, 1200px);
+  --cardwidth: 300px;
+  --cardheight: 590px;
+  --gap: 20px;
+  --speed: 35s;
+  --background: black;
+  --dramamovies: 0;
+  --actionmovies: 0;
+  --comedymovies: 0;
+}
+body {
+  background-color: black;
+  box-sizing: border-box;
+}
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  margin: 20px;
+  border: 0.5px solid goldenrod;
+}
+
+.drama,
+.thrillers {
+  margin-top: 100px;
+}
+.drama h2,
+.thrillers h2 {
+  color: goldenrod;
+  margin: 10px auto 50px auto;
+  padding: auto;
+  text-align: center;
+
+  font-family: "Cinzel";
+}
+
+#thriller,
+#drama {
+  width: var(--thriller-width);
+  height: var(--cardheight);
+  margin: auto;
+  display: block;
+  overflow: hidden;
+}
+
+/* cards */
+
+#thriller .card {
+  width: var(--cardwidth);
+  height: var(--cardheight);
+  position: absolute;
+  overflow: hidden;
+  animation: slide var(--speed) linear infinite;
+  display: flex;
+  flex-direction: column; /* stack items vertically */
+  align-items: center; /* center content */
+
+  animation-delay: calc((var(--speed) / var(--items)) * var(--i) * -1);
+
+  border-radius: 12px;
+  background: rgba(252, 252, 252, 0.938);
+  color: #222;
+}
+
+#drama img,
+#thriller img {
+  width: 100%;
+  height: 70%;
+  object-fit: contain;
+  background-color: black;
+  border-radius: 15px;
+}
+
+#drama h2,
+#thriller h2 {
+  margin: 10px 15px 6px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: rgba(184, 135, 11, 0.226);
+  padding: 10px;
+  border-radius: 16px;
+}
+
+#drama p,
+#thriller p {
+  margin: 0 15px;
+  font-size: 14px;
+  opacity: 0.75;
+  padding: 10px;
+  box-sizing: border-box;
+}
+#drama p:hover,
+#thriller p:hover {
+  font-weight: 800;
+}
+
+#drama span,
+#thriller span {
+  font-weight: bolder;
+  color: darkgoldenrod;
+}
+
+.text {
+  text-align: center;
+  height: auto;
+  margin: auto;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(calc(var(--items) * (var(--cardwidth) + var(--gap))));
+  }
+  to {
+    transform: translateX(
+      calc(var(--items) * (var(--cardwidth) / 2 + var(--gap)) * -1)
+    );
+  }
+}
+
+/* Pause animation on hover */
+#drama:hover .dramacard,
+#thriller:hover .card {
+  animation-play-state: paused;
+}
+
+/* drama start */
+
+#drama .dramacard {
+  width: var(--cardwidth);
+  height: var(--cardheight);
+  position: absolute;
+  overflow: hidden;
+  animation: dramaslides var(--speed) linear infinite;
+  display: flex;
+  flex-direction: column; /* stack items vertically */
+  align-items: center; /* center content */
+
+  animation-delay: calc(
+    (var(--speed) / var(--dramamovies)) * var(--drama) * -1
+  );
+
+  border-radius: 12px;
+  background: rgba(252, 252, 252, 0.938);
+  color: #222;
+}
+
+@keyframes dramaslides {
+  from {
+    transform: translateX(
+      calc(var(--items) * (var(--cardwidth) / 2 + var(--gap)) * -1)
+    );
+  }
+  to {
+    transform: translateX(calc(var(--items) * (var(--cardwidth) + var(--gap))));
+  }
+}
+
+.comedy,
+.action {
+  margin-top: 100px;
+}
+.comedy h2,
+.action h2 {
+  color: goldenrod;
+  margin: 10px auto 50px auto;
+  padding: auto;
+  text-align: center;
+
+  font-family: "Cinzel";
+}
+
+#comedy,
+#action {
+  width: var(--thriller-width);
+  height: var(--cardheight);
+  margin: auto;
+  display: block;
+  overflow: hidden;
+}
+
+/* cards */
+
+#action .actioncard {
+  width: var(--cardwidth);
+  height: var(--cardheight);
+  position: absolute;
+  overflow: hidden;
+  animation: action var(--speed) linear infinite;
+  display: flex;
+  flex-direction: column; /* stack items vertically */
+  align-items: center; /* center content */
+
+  animation-delay: calc(
+    (var(--speed) / var(--actionmovies)) * var(--action) * -1
+  );
+
+  border-radius: 12px;
+  background: rgba(252, 252, 252, 0.938);
+  color: #222;
+}
+#comedy .comedycard {
+  width: var(--cardwidth);
+  height: var(--cardheight);
+  position: absolute;
+  overflow: hidden;
+  animation: comedy var(--speed) linear infinite;
+  display: flex;
+  flex-direction: column; /* stack items vertically */
+  align-items: center; /* center content */
+
+  animation-delay: calc(
+    (var(--speed) / var(--comedymovies)) * var(--comedy) * -1
+  );
+
+  border-radius: 12px;
+  background: rgba(252, 252, 252, 0.938);
+  color: #222;
+}
+
+#comedy img,
+#action img {
+  width: 100%;
+  height: 70%;
+  object-fit: contain;
+  background-color: black;
+  border-radius: 15px;
+}
+
+#comedy h2,
+#action h2 {
+  margin: 10px 15px 6px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: rgba(184, 135, 11, 0.226);
+  padding: 10px;
+  border-radius: 16px;
+}
+
+#comedy p,
+#action p {
+  margin: 0 15px;
+  font-size: 14px;
+  opacity: 0.75;
+  padding: 10px;
+  box-sizing: border-box;
+}
+#comedy p:hover,
+#action p:hover {
+  font-weight: 800;
+}
+
+#comedy span,
+#action span {
+  font-weight: bolder;
+  color: darkgoldenrod;
+}
+
+.text {
+  text-align: center;
+  height: auto;
+  margin: auto;
+}
+
+@keyframes comedy {
+  from {
+    transform: translateX(
+      calc(var(--comedymovies) * (var(--cardwidth) + var(--gap)))
+    );
+  }
+  to {
+    transform: translateX(
+      calc(var(--comedymovies) * (var(--cardwidth) / 2 + var(--gap)) * -1)
+    );
+  }
+}
+
+@keyframes action {
+  from {
+    transform: translateX(
+      calc(var(--actionmovies) * (var(--cardwidth) / 2 + var(--gap)) * -1)
+    );
+  }
+  to {
+    transform: translateX(
+      calc(var(--actionmovies) * (var(--cardwidth) + var(--gap)))
+    );
+  }
+}
+
+#action:hover .actioncard,
+#comedy:hover .comedycard {
+  animation-play-state: paused;
+}
+
+.box {
+  /* background-color: goldenrod; */
+  padding: 20px;
+  overflow: hidden;
+  background-color: #fff9cc00;
+  border-radius: 30px;
+  position: relative;
+}
+
+.netflex1 {
+  position: absolute;
+  top: 50%; /* NEW */
+  left: 50%; /* NEW */
+  transform: translate(-50%, -50%);
+
+  display: none;
+  align-items: center;
+  gap: 15px;
+}
+
+.t1 {
+  font-size: 4rem;
+  color: #ffd84d;
+  font-family: "Cinzel";
+  display: inline-block;
+  transition: 0.3s ease;
+
+  animation: fadeOut 1s ease-out 3s forwards, fadeIn 1s ease-out 5s forwards;
+
+  font-weight: 900;
+  text-shadow: -0.0075em 0.0075em 0 #fff3a1, 0.005em 0.005em 0 #ffe680,
+    0.01em 0.01em 0 #ffecb4, 0.015em 0.015em 0 #ffcc4d, 0.02em 0.02em 0 #ffbf33,
+    0.025em 0.025em 0 #ffb31a, 0.03em 0.03em 0 #ffa600,
+    0.035em 0.035em 0 #ff9900;
+}
+
+#p1 {
+  animation: grow 3s ease forwards;
+  transition: transform 0.3s ease;
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(0.2); /* smaller start */
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.t1:hover {
+  transform: translateY(-40%) !important ;
+}
+
+.text-container {
+  width: 100vw;
+  height: 100vh;
+  font-weight: bold;
+  font-size: 36px;
+  position: relative;
+  overflow: hidden;
+}
+
+.text-container > div {
+  animation: come2life linear 10s infinite;
+  transform-origin: center center;
+  opacity: 0;
+  width: 250px;
+  height: 200px;
+  position: absolute;
+  backface-visibility: hidden;
+  color: azure;
+}
+
+.text-container > div:nth-child(1) {
+  left: 30vw;
+  top: 30vh;
+  animation-delay: 0s;
+}
+
+.text-container > div:nth-child(2) {
+  left: 70vw;
+  top: 30vh;
+  animation-delay: 4s;
+}
+
+.text-container > div:nth-child(3) {
+  left: 50vw;
+  top: 50vh;
+  animation-delay: 8s;
+}
+
+.text-container > div:nth-child(4) {
+  left: 30vw;
+  top: 70vh;
+  animation-delay: 6s;
+}
+
+.text-container > div:nth-child(5) {
+  left: 70vw;
+  top: 70vh;
+  animation-delay: 2s;
+}
+
+@keyframes come2life {
+  0% {
+    transform: scale3d(0, 0, 1) rotate(0.02deg);
+    opacity: 0;
+    filter: blur(10px);
+  }
+  25% {
+    transform: scale3d(1, 1, 1) rotate(0.02deg);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  40% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale3d(4, 4, 1) rotate(0.02deg);
+    filter: blur(10px);
+  }
+}
